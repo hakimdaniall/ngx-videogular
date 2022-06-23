@@ -1,0 +1,42 @@
+.video-player-wrapper {
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+}
+
+.vg-player {
+    aspect-ratio: 16/9;
+}
+
+.player-list {
+    margin: 0;
+    padding: 0;
+}
+
+.player-list li {
+    list-style: none;
+    padding: 15px 35px;
+    display: block;
+    background: #cccc;
+    cursor: pointer;
+    text-align: left;
+    margin-bottom: 1px;
+}
+
+li.selected {
+    background: #03A9F4 !important;
+}
+
+// custom
+
+vg-play-pause {
+    .icon.vg-icon-play_arrow {
+        background: red;
+    }
+
+    .icon.vg-icon-play_arrow {
+        background: blue;
+    }
+}
+
+// end custom
