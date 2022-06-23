@@ -10,11 +10,12 @@ import { VgOverlayPlayModule } from '@videogular/ngx-videogular/overlay-play';
 import { VgBufferingModule } from '@videogular/ngx-videogular/buffering';
 import { VdoPlayerComponent } from './components/vdo-player/vdo-player.component';
 
+import { LoaderModule } from './components/loader/loader.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VdoPlayerComponent
+    VdoPlayerComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,7 +23,8 @@ import { VdoPlayerComponent } from './components/vdo-player/vdo-player.component
     VgCoreModule,
     VgControlsModule,
     VgOverlayPlayModule,
-    VgBufferingModule
+    VgBufferingModule,
+    LoaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

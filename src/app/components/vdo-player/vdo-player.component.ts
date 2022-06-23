@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { VideoPlayerServiceService } from 'src/app/services/video-player-service.service';
 
 @Component({
   selector: 'app-vdo-player',
@@ -6,63 +7,49 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./vdo-player.component.scss']
 })
 export class VdoPlayerComponent implements OnInit {
-  videoItems = [
-    {
-      name: 'Video one',
-      src: 'http://static.videogular.com/assets/videos/videogular.mp4',
-      type: 'video/mp4',
-      track: [
-        {
-          default: true,
-          label: 'English',
-          src: 'http://static.videogular.com/assets/subs/pale-blue-dot.vtt',
-          srclang: 'en'
-        },
-        {
-          default: false,
-          label: 'Español',
-          src: 'http://static.videogular.com/assets/subs/pale-blue-dot-es.vtt',
-          srclang: 'es'
-        },
-      ]
-    },
-    {
-      name: 'Video two',
-      src: 'http://static.videogular.com/assets/videos/big_buck_bunny_720p_h264.mov',
-      type: 'video/mp4'
-    },
-    {
-      name: 'Video three',
-      src: 'http://static.videogular.com/assets/videos/elephants-dream.mp4',
-      type: 'video/mp4'
-    }
-  ];
+  videoItems = [];
   activeIndex = 0;
   currentVideo = this.videoItems[this.activeIndex];
   data: any;
-  constructor() { }
+  constructor(
+    private videoPlayerService: VideoPlayerServiceService
+  ) { }
 
   ngOnInit(): void {
+    this.videoPlayerService.getVideoSource().then((videoSource) => {
+      this.videoItems = videoSource;
+      console.log(this.videoItems);
+
+      this.videoPlayerInit(this.data)
+      this.currentVideo = this.videoItems[this.activeIndex]
+    });
   }
 
   videoPlayerInit(data: any) {
-    this.data = data;
-    this.data.getDefaultMedia().subscriptions.loadedMetadata.subscribe(this.initVdo.bind(this));
-    this.data.getDefaultMedia().subscriptions.ended.subscribe(this.nextVideo.bind(this));
+    setTimeout(() => {
+      this.data = data;
+      this.data.getDefaultMedia().subscriptions.loadedMetadata.subscribe(this.initVdo.bind(this));
+      this.data.getDefaultMedia().subscriptions.ended.subscribe(this.nextVideo.bind(this));
+      console.log(data)
+    }, 5000);
   }
+
   nextVideo() {
     this.activeIndex++;
     if (this.activeIndex === this.videoItems.length) {
       this.activeIndex = 0;
     }
     this.currentVideo = this.videoItems[this.activeIndex];
+    console.log('run this function 2')
   }
 
   initVdo() {
     // this.data.play();
+    console.log('run this function 3')
   }
   startPlaylistVdo(item: any, index: number) {
     this.activeIndex = index;
     this.currentVideo = item;
+    console.log('run this function 4')
   }
 }
