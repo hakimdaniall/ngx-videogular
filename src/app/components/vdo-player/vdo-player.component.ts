@@ -51,5 +51,6 @@ export class VdoPlayerComponent implements OnInit {
     this.activeIndex = index;
     this.currentVideo = item;
     console.log('run this function 4')
+    console.log('the current video is', this.currentVideo)
   }
 }

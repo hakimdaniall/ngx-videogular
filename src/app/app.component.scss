@@ -1,3 +1,17 @@
 .video-player-wrapper {
     width: fit-content;
 }
+
+.site-header {
+    position: sticky;
+    top: 0;
+    background-color: slategrey;
+    padding: 20px;
+    color: white;
+
+    ul {
+        list-style: none;
+        display: flex;
+        column-gap: 20px;
+    }
+}

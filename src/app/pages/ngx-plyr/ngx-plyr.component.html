@@ -1,0 +1,81 @@
+<div color="primary" class="mat-elevation-z5">
+    ngx-plyr
+</div>
+
+<div class="wrapper mat-typography" fxLayout="column" fxLayoutGap="32px">
+    <h1>ngx-plyr: plyr for angular</h1>
+
+    <p>Here you can find various demos for <a href="https://github.com/smnbbrv/ngx-plyr">ngx-plyr</a></p>
+
+    <div style="width: 640px;">
+        <div>Video</div>
+        <div>Plyr with custom video as a source</div>
+
+        <div mat-card-image plyr plyrTitle="Custom video" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
+            [plyrPoster]="poster" [plyrSources]="videoSources" [plyrTracks]="tracks" (plyrInit)="player = $event"
+            (plyrPlay)="played($event)"></div>
+        <div>
+            <button mat-raised-button color="accent" (click)="play()">
+                Play
+            </button>
+
+            <button mat-raised-button color="accent" (click)="pause()">
+                Pause
+            </button>
+
+            <button mat-raised-button color="accent" (click)="stop()">
+                Stop
+            </button>
+
+            <a mat-raised-button color="primary" href="https://github.com/smnbbrv/ngx-plyr/tree/master/src/app">
+                Source code
+            </a>
+        </div>
+    </div>
+
+    <div style="width: 640px;">
+        <h1>Audio</h1>
+        <h2>Plyr with audio as a source</h2>
+
+        <div mat-card-image plyr plyrTitle="Audio" plyrType="audio" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
+            [plyrSources]="audioSources"></div>
+
+        <div>
+            <a mat-raised-button color="primary" href="https://github.com/smnbbrv/ngx-plyr/tree/master/src/app">Source
+                code</a>
+        </div>
+    </div>
+
+    <div></div>
+
+    <h2>Youtube and Vimeo</h2>
+
+    <div fxLayout="row" fxLayoutGap="32px">
+        <div style="width: 640px;">
+            <div>Youtube</div>
+            <div>Plyr with Yotube video as a source</div>
+
+            <div mat-card-image plyr plyrTitle="Video from Youtube" [plyrSources]="youtubeSources">
+            </div>
+
+            <div>
+                <a mat-raised-button color="primary"
+                    href="https://github.com/smnbbrv/ngx-plyr/tree/master/src/app">Source
+                    code</a>
+            </div>
+        </div>
+
+        <div style="width: 640px;">
+            <div>Vimeo</div>
+            <div>Plyr with Vimeo video as a source</div>
+
+            <div mat-card-image plyr plyrTitle="Video from Vimeo" [plyrSources]="vimeoSources"></div>
+
+            <div>
+                <a mat-raised-button color="primary"
+                    href="https://github.com/smnbbrv/ngx-plyr/tree/master/src/app">Source
+                    code</a>
+            </div>
+        </div>
+    </div>
+</div>

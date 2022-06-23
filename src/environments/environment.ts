@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   kitchenSink: false, // true to show Kitchen Sink link in side menu
   mockApiData: true, // true to use static mock data for all API services
-  mockApiSimulatedDelayDuration: 3000, // duration in milliseconds
+  mockApiSimulatedDelayDuration: 1000, // duration in milliseconds
   mockAutoLogin: true, // true to simulate that user is always logged in
   mockStaffLogin: true, // true to simulate that user is staff; use together with mockAutoLogin
   mockAutoUserAccounts: true, // true to simulate that there are already multiple user accounts on the device
