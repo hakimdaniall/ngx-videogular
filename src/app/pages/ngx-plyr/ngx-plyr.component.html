@@ -1,13 +1,18 @@
-<div class="wrapper" fxLayout="column" fxLayoutGap="32px">
-    <h1>ngx-plyr: plyr for angular</h1>
-    <div class="video-layout">
-        <div mat-card-image plyr plyrTitle="Custom video" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
-            [plyrPoster]="currentVideo.poster" [plyrSources]="currentVideo.videoSources"
-            [plyrTracks]="currentVideo.tracks" (plyrInit)="player = $event" (plyrPlay)="played($event)">
+<div class="ngx-plyr">
+    <div class="wrapper" fxLayout="column" fxLayoutGap="32px">
+        <div class="video-layout">
+            <div mat-card-image plyr plyrTitle="Custom video" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
+                [plyrPoster]="currentVideo.poster" [plyrSources]="currentVideo.videoSources"
+                [plyrTracks]="currentVideo.tracks" (plyrInit)="player = $event" (plyrPlay)="played($event)">
+            </div>
+
+            <button type="button" class="arrow-content">
+                <span>Course content</span>
+            </button>
+            <ul class="player-list">
+                <li *ngFor="let vid of video; let i = index" [class.selected]="vid === currentVideo"
+                    (click)="startPlaylistVdo(vid, i)">{{vid.name}}</li>
+            </ul>
         </div>
-        <ul class="player-list">
-            <li *ngFor="let vid of video; let i = index" [class.selected]="vid === currentVideo"
-                (click)="startPlaylistVdo(vid, i)">{{vid.name}}</li>
-        </ul>
     </div>
 </div>

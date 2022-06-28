@@ -11,6 +11,7 @@ export class NgxPlyrComponent implements OnInit {
   // get the component instance to have access to plyr instance
   @ViewChild(PlyrComponent, { static: true })
   plyr: PlyrComponent;
+  player: Plyr;
   activeIndex: number = 0;
   video: any = [
     {
@@ -82,13 +83,12 @@ export class NgxPlyrComponent implements OnInit {
     }
   ]
   currentVideo = this.video[this.activeIndex];
+
+  instance: any; //test
   constructor() { }
 
-  ngOnInit() {
-    console.log(this.currentVideo)
-  }
-  // or get it from plyrInit event
-  player: Plyr;
+  ngOnInit() { }
+
   played(event: Plyr.PlyrEvent) {
     console.log('played', event);
   }

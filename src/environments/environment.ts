@@ -16,7 +16,12 @@ export const environment = {
   mockHasNoBiometrics: false, // true to simulate that device has no biometrics
   mockUserIdleTime: 60 * 20, // 60 seconds * 20 minutes
   mockSessionExpired: true, // true to simulate Session Expired scenario when logging in
+
+  // logins
+  apiUrl: 'http://localhost:52647'
+
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file
