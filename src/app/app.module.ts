@@ -24,9 +24,11 @@ import { NgxVideogularComponent } from './pages/ngx-videogular/ngx-videogular.co
 import { NgxPlyrComponent } from './pages/ngx-plyr/ngx-plyr.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
-import { BasicAuthInterceptor } from './helpers/basic-auth.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
 import { fakeBackendProvider } from './helpers/fake-backend';
+import { AlertComponent } from './components/alert/alert.component';
+import { JwtInterceptor } from './helpers';
+import { RegisterComponent } from './pages/register/register.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { fakeBackendProvider } from './helpers/fake-backend';
     NgxPlyrComponent,
     HomeComponent,
     LoginComponent,
+    AlertComponent,
+    RegisterComponent,
 
   ],
   imports: [
@@ -52,7 +56,7 @@ import { fakeBackendProvider } from './helpers/fake-backend';
     LoaderModule,
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     // provider used to create fake backend
     fakeBackendProvider

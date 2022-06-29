@@ -4,5 +4,5 @@
     password: string;
     firstName: string;
     lastName: string;
-    authdata?: string;
+    token: string;
 }

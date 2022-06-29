@@ -5,6 +5,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { NgxPlyrComponent } from './pages/ngx-plyr/ngx-plyr.component';
 import { NgxVideogularComponent } from './pages/ngx-videogular/ngx-videogular.component';
 import { AuthGuard } from './helpers';
+import { RegisterComponent } from './pages/register/register.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   },
   {
     path: 'ngx-videogular',
