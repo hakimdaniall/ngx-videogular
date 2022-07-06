@@ -1,9 +1,36 @@
-<h1>Hi {{currentUser.firstName}}!</h1>
-<p>You're logged in with Angular 8!!</p>
-<h3>All registered users:</h3>
-<ul>
-    <li *ngFor="let user of users">
-        {{user.username}} ({{user.firstName}} {{user.lastName}})
-        - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
-    </li>
-</ul>
+<div class="content">
+    <div class="content-area secondary--">
+        <div class="widget-area">
+            <app-widget [widgetType]="'following'" [widgetTitle]="'I\'m Following'" [widgetNumCount]="11"></app-widget>
+        </div>
+        <div class="widget-area">
+            <app-widget [widgetType]="'blog'" [widgetTitle]="'Blog'"></app-widget>
+        </div>
+    </div>
+
+    <div class="content-area primary--">
+        <div class="widget-area">
+            <app-widget></app-widget>
+        </div>
+
+        <h1>Hi {{currentUser.firstName}}!</h1>
+        <p>You're logged in with Angular 8!!</p>
+        <h3>All registered users:</h3>
+        <ul>
+            <li *ngFor="let user of users">
+                {{user.username}} ({{user.firstName}} {{user.lastName}})
+                - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content-area secondary--">
+        <div class="widget-area">
+            <app-widget [widgetType]="'latestUpdates'" [widgetTitle]="'Latest updates'"></app-widget>
+        </div>
+
+        <div class="widget-area">
+            <app-widget [widgetType]="'recentActiveMembers'" [widgetTitle]="'Recently Active Members'"></app-widget>
+        </div>
+    </div>
+</div>

@@ -1,11 +1,4 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
-    <div class="navbar-nav">
-        <a class="nav-item nav-link" routerLink="/">Home</a>
-        <a class="nav-item nav-link" routerLink="/ngx-videogular">NGX-VIDEOGULAR</a>
-        <a class="nav-item nav-link" routerLink="/ngx-plyr">NGX-PLYR</a>
-        <a class="nav-item nav-link" (click)="logout()">Logout</a>
-    </div>
-</nav>
+<app-site-header></app-site-header>
 
 <div class="container">
     <router-outlet></router-outlet>

@@ -1,0 +1,46 @@
+<aside class="widget">
+    <h2 class="widget-title">{{widgetTitle}}
+        <span class="widget-num-count">{{widgetNumCount}}</span>
+    </h2>
+    <div class="avatar-block" *ngIf="widgetType == 'following'">
+        <div class="item-avatar" *ngFor="let user of following">
+            <a href="" class="bp-tooltip">
+                <p class="avatar-name">{{user.name}}</p>
+                <img class="fw-img" [src]="'assets/images/following/' + user.image" alt="">
+            </a>
+        </div>
+    </div>
+
+    <ul class="widget-recent-post" *ngIf="widgetType == 'blog'">
+        <li *ngFor="let post of blog">
+            <a href="#" class="widget-recent-post__block">
+                <img class="widget-recent-post__poster" [src]="'assets/images/blog/' + post.image" alt="{{post.title}}">
+                <div class="widget-recent-post-description">
+                    <h3 class="widget-recent-post__title">{{post.title}}</h3>
+                    <h4 class="widget-recent-post__date">{{post.date | date: 'MMMM d, y'}}</h4>
+                </div>
+            </a>
+        </li>
+    </ul>
+
+    <div class="widget-activity-list item-list" *ngIf="widgetType == 'latestUpdates'">
+        <div class="activity-update" *ngFor="let update of latestUpdates">
+            <img class="fw-img smaller--" [src]="'assets/images/following/' + update.image" alt="">
+            <div class="activity-update-desc">
+                <p>
+                    <a class="widget-user" href="#">{{update.user}}</a>
+                    posted an update
+                </p>
+                <a href="#" class="widget-activity-list-date">
+                    <span class="time-since">{{update.date | timeAgo}}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="widget-recent-active-members" *ngIf="widgetType =='recentActiveMembers'">
+        <a [routerLink]="member.path" class="item-avatar" *ngFor="let member of recentActiveMember">
+            <img [src]="member.image ? member.image : placeholderImage" alt="" class="fw-img">
+        </a>
+    </div>
+</aside>

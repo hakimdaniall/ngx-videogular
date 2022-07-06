@@ -29,6 +29,11 @@ import { fakeBackendProvider } from './helpers/fake-backend';
 import { AlertComponent } from './components/alert/alert.component';
 import { JwtInterceptor } from './helpers';
 import { RegisterComponent } from './pages/register/register.component';
+import { SiteHeaderComponent } from './components/site-header/site-header.component';
+import { WidgetComponent } from './components/widget/widget.component';
+import { DatePipe } from '@angular/common';
+import { TimeAgoPipe } from './pipes/time-ago.pipe';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +45,9 @@ import { RegisterComponent } from './pages/register/register.component';
     LoginComponent,
     AlertComponent,
     RegisterComponent,
-
+    SiteHeaderComponent,
+    WidgetComponent,
+    TimeAgoPipe
   ],
   imports: [
     BrowserModule,
@@ -59,7 +66,8 @@ import { RegisterComponent } from './pages/register/register.component';
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     // provider used to create fake backend
-    fakeBackendProvider
+    fakeBackendProvider,
+    DatePipe,
   ],
   bootstrap: [AppComponent]
 })

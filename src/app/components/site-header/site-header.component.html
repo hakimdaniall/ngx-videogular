@@ -1,0 +1,17 @@
+<nav class="site-header" *ngIf="currentUser">
+    <button type="button" (click)="showNavBar()">Menu</button>
+    <img class="site-header-logo" src="assets/images/ekelas-logo.png" alt="">
+    <div class="site-header-overlay" *ngIf="navBarIsShown">
+        <ul class="site-header__ul">
+            <li class="site-header__list" *ngFor="let link of links">
+                <i class="{{link.icon}}"></i>
+                <a class="site-header__list-link" [routerLink]="link.link">{{link.label}}</a>
+            </li>
+            <!-- <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/ngx-videogular">NGX-VIDEOGULAR</a></li>
+            <li><a routerLink="/ngx-plyr">NGX-PLYR</a></li>
+            <li><a (click)="logout()">Logout</a></li> -->
+        </ul>
+        <button type="button" class="site-header-close" (click)="hideNavBar()">Close</button>
+    </div>
+</nav>

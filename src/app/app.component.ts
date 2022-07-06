@@ -12,15 +12,7 @@ export class AppComponent {
   title = 'eko-vid-int';
   currentUser: User;
 
-  constructor(
-    private router: Router,
-    private authenticationService: AuthenticationService
-  ) {
-    this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
-  }
+  constructor() { }
 
-  logout() {
-    this.authenticationService.logout();
-    this.router.navigate(['/login']);
-  }
+
 }

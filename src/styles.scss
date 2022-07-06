@@ -1,3 +1,6 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 /* You can add global styles to this file, and also import other style files */
 * {
     margin: 0;
@@ -11,10 +14,124 @@ body {
 
 body {
     margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-attachment: fixed;
+    background-image: url('./assets/images/site-bg.png');
 }
 
 a {
     cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+.avatar-block {
+    display: flex;
+    gap: 9px;
+    flex-wrap: wrap;
+}
+
+.avatar-name {
+    position: absolute;
+    background-color: rgba(18, 43, 70, 0.95);
+    color: #fff;
+    pointer-events: none;
+    opacity: 0;
+    transition: all .18s ease-out .18s;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: -.24px;
+    background: rgba(18, 43, 70, .95);
+    border-radius: 4px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 22%);
+    color: #fff;
+    line-height: 1.3;
+    padding: 7px 15px;
+    position: absolute;
+    white-space: nowrap;
+    z-index: 10;
+    bottom: 100%;
+    left: 50%;
+    margin-bottom: 11px;
+    transform: translate(-50%, 10px);
+    transform-origin: top;
+}
+
+.bp-tooltip {
+    position: relative;
+
+    &:hover {
+        .avatar-name {
+            transform: translate(-50%, 0);
+            opacity: 1;
+        }
+    }
+}
+
+.content {
+    display: flex;
+}
+
+.content-area {
+    max-width: 900px;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 1.875rem;
+    padding-bottom: 2.1875rem;
+
+    &.primary-- {
+        max-width: 600px;
+    }
+
+    &.secondary-- {
+        max-width: 320px;
+    }
+}
+
+.widget {
+    background: #fff;
+    border: 1px solid #e7e9ec;
+    border-radius: 4px;
+    font-size: .875rem;
+    line-height: 1.35;
+    margin-bottom: 1.25rem;
+    padding: 1.25rem 0.9375rem;
+}
+
+// .widget-area {
+//     max-width: 300px;
+// }
+
+.widget-title {
+    font-size: .75rem;
+    font-weight: 600;
+    color: #122b46;
+    letter-spacing: .25px;
+    line-height: 1rem;
+    margin: 0 0 20px;
     text-transform: uppercase;
+}
+
+.widget-num-count {
+    padding: 0 0.25rem;
+    color: #a3a5a9;
+    margin-right: auto;
+}
+
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1240px;
+    }
 }
