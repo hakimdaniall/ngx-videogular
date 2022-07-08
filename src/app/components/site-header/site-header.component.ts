@@ -15,8 +15,8 @@ export class SiteHeaderComponent implements OnInit {
   links = [
     {
       icon: 'bi bi-person',
-      label: 'Timeline',
-      link: '#'
+      label: 'Profile',
+      link: '/profile'
     },
     {
       icon: 'bi bi-people',

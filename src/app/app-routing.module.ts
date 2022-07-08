@@ -6,6 +6,7 @@ import { NgxPlyrComponent } from './pages/ngx-plyr/ngx-plyr.component';
 import { NgxVideogularComponent } from './pages/ngx-videogular/ngx-videogular.component';
 import { AuthGuard } from './helpers';
 import { RegisterComponent } from './pages/register/register.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'ngx-plyr',
     component: NgxPlyrComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
   },
   // otherwise redirect to home
   {

@@ -10,18 +10,13 @@
 
     <div class="content-area primary--">
         <div class="widget-area">
+            <h1>Activity Feed</h1>
             <app-widget></app-widget>
         </div>
 
-        <h1>Hi {{currentUser.firstName}}!</h1>
-        <p>You're logged in with Angular 8!!</p>
-        <h3>All registered users:</h3>
-        <ul>
-            <li *ngFor="let user of users">
-                {{user.username}} ({{user.firstName}} {{user.lastName}})
-                - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
-            </li>
-        </ul>
+
+        <!-- <app-emoji-picker></app-emoji-picker> -->
+
     </div>
 
     <div class="content-area secondary--">

@@ -33,6 +33,9 @@ import { SiteHeaderComponent } from './components/site-header/site-header.compon
 import { WidgetComponent } from './components/widget/widget.component';
 import { DatePipe } from '@angular/common';
 import { TimeAgoPipe } from './pipes/time-ago.pipe';
+import { EmojiPickerComponent } from './components/emoji-picker/emoji-picker.component';
+import { PickerModule } from '@ctrl/ngx-emoji-mart';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 @NgModule({
@@ -47,7 +50,9 @@ import { TimeAgoPipe } from './pipes/time-ago.pipe';
     RegisterComponent,
     SiteHeaderComponent,
     WidgetComponent,
-    TimeAgoPipe
+    TimeAgoPipe,
+    EmojiPickerComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +66,7 @@ import { TimeAgoPipe } from './pipes/time-ago.pipe';
     VgBufferingModule,
     PlyrModule,
     LoaderModule,
+    PickerModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
