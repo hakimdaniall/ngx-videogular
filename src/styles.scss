@@ -131,6 +131,13 @@ p {
     margin-right: auto;
 }
 
+.profile-image {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
 @media (min-width: 1440px) {
     .container {
         max-width: 1240px;

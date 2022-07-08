@@ -11,12 +11,12 @@
     <div class="content-area primary--">
         <div class="widget-area">
             <h1>Activity Feed</h1>
-            <app-widget></app-widget>
+            <div class="activity-form__user-profile">
+                <img src="assets/images/placeholders/placeholder-person.jpg" alt="" class="profile-image">
+                <h3 class="activity-form__user-name">Nurfarah</h3>
+            </div>
+            <app-widget [widgetType]="'activity-form'"></app-widget>
         </div>
-
-
-        <app-emoji-picker></app-emoji-picker>
-
     </div>
 
     <div class="content-area secondary--">

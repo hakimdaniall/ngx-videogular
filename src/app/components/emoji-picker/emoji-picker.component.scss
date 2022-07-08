@@ -1,0 +1,13 @@
+emoji-mart {
+    position: relative;
+}
+
+.form-field {
+    width: 100%;
+    resize: none;
+    border: none;
+
+    &:focus-visible {
+        outline: none;
+    }
+}

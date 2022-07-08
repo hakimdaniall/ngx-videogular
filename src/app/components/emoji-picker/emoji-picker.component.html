@@ -1,8 +1,8 @@
-<p>
-    Emojis yeey
-</p>
-<textarea #myTextArea (click)="getCaretPos(myTextArea)" (keyup)="getCaretPos(myTextArea)" cols="40"
-    [(ngModel)]="content">
+<textarea
+    class="form-field"
+    #myTextArea (click)="getCaretPos(myTextArea)" (keyup)="getCaretPos(myTextArea)" cols="40"
+    [(ngModel)]="content"
+    placeholder="Write here or use @ to metion someone">
     {{content}}
   </textarea>
 
@@ -16,8 +16,6 @@
     <emoji-mart [i18n]="{ search: 'Recherche', categories: { search: 'Résultats de recherche', recent: 'Récents' } }"
         title="Awesome !!!" [style]="{
         position: 'absolute',
-        bottom: '20px',
-        right: '20px',
         backgroundColor: color
       }" (emojiClick)="addEmoji($event)">
     </emoji-mart>

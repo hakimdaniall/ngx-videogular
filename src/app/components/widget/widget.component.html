@@ -1,5 +1,5 @@
 <aside class="widget">
-    <h2 class="widget-title">{{widgetTitle}}
+    <h2 class="widget-title" *ngIf="widgetTitle">{{widgetTitle}}
         <span class="widget-num-count">{{widgetNumCount}}</span>
     </h2>
     <div class="avatar-block" *ngIf="widgetType == 'following'">
@@ -42,5 +42,9 @@
         <a [routerLink]="member.path" class="item-avatar" *ngFor="let member of recentActiveMember">
             <img [src]="member.image ? member.image : placeholderImage" alt="" class="fw-img">
         </a>
+    </div>
+
+    <div class="widget-activity-form" *ngIf="widgetType =='activity-form'">
+        <app-emoji-picker></app-emoji-picker>
     </div>
 </aside>
