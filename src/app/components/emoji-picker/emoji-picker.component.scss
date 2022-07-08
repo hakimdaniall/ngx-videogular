@@ -2,6 +2,20 @@ emoji-mart {
     position: relative;
 }
 
+.emoji-picker__button { 
+
+    &:before {
+        content: "\263A";        
+        color: rgba(18,43,70,.4);
+        font: normal 400 normal 24px bb-icons;
+        display: inline-block;
+        text-decoration: inherit;
+        text-transform: none;
+        -webkit-font-smoothing: antialiased;
+        cursor: pointer;
+    }
+}
+
 .form-field {
     width: 100%;
     resize: none;

@@ -16,6 +16,23 @@
                 <h3 class="activity-form__user-name">Nurfarah</h3>
             </div>
             <app-widget [widgetType]="'activity-form'"></app-widget>
+            <div class="activity-form-selection-area">                
+                <select name="postIn" id="postIn">
+                    <option value="profile">Post in: Profile</option>
+                    <option value="group">Post in: Group</option>
+                </select>
+
+                <select name="audience" id="audience">
+                    <option value="public">Public</option>
+                    <option value="allMembers">All Members</option>
+                    <option value="myConnections">My Connections</option>
+                    <option value="onlyMe">Only Me</option>
+                </select>
+            </div>
+            <div class="activity-form-submit-area">
+                <button type="button" class="activity-from__cancel-button">Cancel</button>
+                <button type="submit" class="activity-from__submit-button">Post Update</button>
+            </div>
         </div>
     </div>
 

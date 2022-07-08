@@ -8,9 +8,9 @@
 
 <br>
 
-<button (click)="showEmoji = !showEmoji">show emojis</button>
+<div class="emoji-picker__button" (click)="showEmoji = !showEmoji"></div>
 
-<input type="color" #inputColor [(ngModel)]="color">
+<!-- <input type="color" #inputColor [(ngModel)]="color"> -->
 
 <ng-container *ngIf="showEmoji">
     <emoji-mart [i18n]="{ search: 'Recherche', categories: { search: 'Résultats de recherche', recent: 'Récents' } }"
