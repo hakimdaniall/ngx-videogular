@@ -37,7 +37,6 @@ import { EmojiPickerComponent } from './components/emoji-picker/emoji-picker.com
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { ProfileComponent } from './pages/profile/profile.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
