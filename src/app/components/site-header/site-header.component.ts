@@ -41,7 +41,7 @@ export class SiteHeaderComponent implements OnInit {
     {
       icon: 'bi bi-calendar-week',
       label: 'Timetable',
-      link: '#'
+      link: '/timetable'
     },
     {
       icon: 'bi bi-book',

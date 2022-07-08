@@ -36,6 +36,11 @@ import { TimeAgoPipe } from './pipes/time-ago.pipe';
 import { EmojiPickerComponent } from './components/emoji-picker/emoji-picker.component';
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { CalendarPickerComponent } from './components/calendar-picker/calendar-picker.component';
+import { TimetableComponent } from './pages/timetable/timetable.component';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+
 
 @NgModule({
   declarations: [
@@ -51,7 +56,9 @@ import { ProfileComponent } from './pages/profile/profile.component';
     WidgetComponent,
     TimeAgoPipe,
     EmojiPickerComponent,
-    ProfileComponent
+    ProfileComponent,
+    CalendarPickerComponent,
+    TimetableComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +72,11 @@ import { ProfileComponent } from './pages/profile/profile.component';
     VgBufferingModule,
     PlyrModule,
     LoaderModule,
-    PickerModule
+    PickerModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    })
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

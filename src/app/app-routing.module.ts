@@ -7,6 +7,7 @@ import { NgxVideogularComponent } from './pages/ngx-videogular/ngx-videogular.co
 import { AuthGuard } from './helpers';
 import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { TimetableComponent } from './pages/timetable/timetable.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent
+  },
+  {
+    path: 'timetable',
+    component: TimetableComponent
   },
   // otherwise redirect to home
   {
