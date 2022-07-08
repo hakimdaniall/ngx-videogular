@@ -14,25 +14,26 @@
             <div class="activity-form__user-profile">
                 <img src="assets/images/placeholders/placeholder-person.jpg" alt="" class="profile-image">
                 <h3 class="activity-form__user-name">Nurfarah</h3>
-            </div>
-            <app-widget [widgetType]="'activity-form'"></app-widget>
-            <div class="activity-form-selection-area">                
-                <select name="postIn" id="postIn">
-                    <option value="profile">Post in: Profile</option>
-                    <option value="group">Post in: Group</option>
-                </select>
-
-                <select name="audience" id="audience">
-                    <option value="public">Public</option>
-                    <option value="allMembers">All Members</option>
-                    <option value="myConnections">My Connections</option>
-                    <option value="onlyMe">Only Me</option>
-                </select>
-            </div>
-            <div class="activity-form-submit-area">
-                <button type="button" class="activity-from__cancel-button">Cancel</button>
-                <button type="submit" class="activity-from__submit-button">Post Update</button>
-            </div>
+            </div>           
+            <app-emoji-picker (touchEmitter)="textboxIsTouch($event)"></app-emoji-picker>
+            <ng-container *ngIf="activityFormButtons">
+                <div class="activity-form-selection-area">
+                    <select name="postIn" id="postIn">
+                        <option value="profile">Post in: Profile</option>
+                        <option value="group">Post in: Group</option>
+                    </select>
+                    <select name="audience" id="audience">
+                        <option value="public">Public</option>
+                        <option value="allMembers">All Members</option>
+                        <option value="myConnections">My Connections</option>
+                        <option value="onlyMe">Only Me</option>
+                    </select>
+                </div>
+                <div class="activity-form-submit-area">
+                    <button type="button" class="activity-from__cancel-button" (click)="onHandleCancel($event)">Cancel</button>
+                    <button type="submit" class="activity-from__submit-button">Post Update</button>
+                </div>
+            </ng-container>
         </div>
     </div>
 

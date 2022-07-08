@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { Subject } from 'rxjs';
 
 @Component({
@@ -13,6 +13,7 @@ export class EmojiPickerComponent implements OnInit {
   caretPos: number = 0;
   color = "";
   @ViewChild('inputColor', { static: true }) inputColor;
+  @Output('touchEmitter') touchEmitter = new EventEmitter;
 
   ngOnInit(): void { }
 
@@ -20,8 +21,9 @@ export class EmojiPickerComponent implements OnInit {
     if (evt.selectionStart || evt.selectionStart == '0') {
       this.caretPos = evt.selectionStart;
     }
-
-    console.log(this.inputColor);
+    // console.log(this.touchEmitter);
+    let message = 'Oh my god its clicked!!'
+    this.touchEmitter.emit(message)
   }
 
   addEmoji(evt) {

@@ -13,7 +13,8 @@ export class HomeComponent implements OnInit {
 
   loading = false;
   users: any = [];
-  currentUser: User
+  currentUser: User;
+  activityFormButtons: boolean = false;
 
   constructor(
     private userService: UserService,
@@ -36,6 +37,16 @@ export class HomeComponent implements OnInit {
     this.userService.getAll()
       .pipe(first())
       .subscribe(users => this.users = users);
+  }
+
+  textboxIsTouch(event) {
+    console.log('touch')
+    console.log(event)
+    this.activityFormButtons = true;
+  }
+
+  onHandleCancel(event) {
+    this.activityFormButtons = false;
   }
 
 }
