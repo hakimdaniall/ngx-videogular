@@ -1,9 +1,14 @@
 <div class="ngx-plyr">
     <div class="wrapper" fxLayout="column" fxLayoutGap="32px">
         <div class="video-layout">
-            <div mat-card-image plyr plyrTitle="Custom video" [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
-                [plyrPoster]="currentVideo.poster" [plyrSources]="currentVideo.videoSources"
-                [plyrTracks]="currentVideo.tracks" (plyrInit)="player = $event" (plyrPlay)="played($event)">
+            <div mat-card-image plyr plyrTitle="Custom video" 
+            [plyrPlaysInline]="true" [plyrCrossOrigin]="true"
+            [plyrPoster]="currentVideo.poster" 
+            [plyrSources]="currentVideo.videoSources"
+            [plyrTracks]="currentVideo.tracks" 
+            [plyrProgress]=""
+            (plyrInit)="player = $event" 
+            (plyrPlay)="played($event)">
             </div>
 
             <button type="button" class="arrow-content">

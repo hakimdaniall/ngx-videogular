@@ -87,10 +87,13 @@ export class NgxPlyrComponent implements OnInit {
   instance: any; //test
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() { 
+
+    console.log(this.plyr.plyrProgress)
+  }
 
   played(event: Plyr.PlyrEvent) {
-    console.log('played', event);
+    // console.log('played', event);
   }
 
   play(): void {
